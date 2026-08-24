@@ -4,7 +4,8 @@ WITH income_type AS (
                 GROUP BY contents)
 
 SELECT
-ROW_NUMBER() OVER () AS income_key, 
+ROW_NUMBER() OVER () AS income_type_key,
+key AS all_type_key,
 contents as type_of_income
 FROM income_type
 WHERE key IN (1,2,4,5)
