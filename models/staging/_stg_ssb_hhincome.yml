@@ -1,7 +1,21 @@
-sources:
-  - name: ssb_pipeline
-    database: ssb-pipeline1
-    schema: raw
-    description: Raw data from SSB website
-    tables:
-      - name: ssb_household_income_raw
+models:
+  - name: stg_ssb_hhincome__all_type
+    description: Table listing the individual types of observed metrics (incl. income types & counts) for which SSB data is available.
+
+  - name: stg_ssb_hhincome__allhh
+    description: Table listing median income for all the household combined for each year for which SSB data is available.
+  
+  - name: stg_ssb_hhincome__hh_count
+    description: Table stores the count metric of individual household types for which SSB data is available.
+
+  - name: stg_ssb_hhincome__hh_type
+    description: Table listing individual types of household for which SSB data is available.
+
+  - name: stg_ssb_hhincome__income_type
+    description: Table listing the individual types of median income for which SSB data is available.
+
+  - name: stg_ssb_hhincome__income
+    description: The dimensional equivalent stage table which combines all the income types for individual household types.
+
+  - name: stg_ssb_hhincome__total_hh_count
+    description: Table listing the total counts metric for each individual household types.
