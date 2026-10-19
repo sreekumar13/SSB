@@ -1,0 +1,3 @@
+models:
+  - name: dim_hh_type
+    description: Final dimension table with income data of all the individual households over the available period.

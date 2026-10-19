@@ -1,0 +1,7 @@
+sources:
+  - name: ssb_pipeline
+    database: ssb-pipeline1
+    schema: raw
+    description: Raw data from SSB website
+    tables:
+      - name: ssb_household_income_raw
