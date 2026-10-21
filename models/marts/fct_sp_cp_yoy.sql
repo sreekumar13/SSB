@@ -57,7 +57,7 @@ final AS (SELECT
   income_type,
   year,
   single_parent_household_child_age AS age_of_youngest_child,
-  income_diff_pct
+  income_diff_pct AS difference_in_percentage
   
   FROM income_diff)
 

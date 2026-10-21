@@ -49,9 +49,9 @@ previous_year,
 current_year,
 type_of_household,
 income_type,
-(nom_YOY - adj_YOY) AS yoy_diff
+(nom_YOY - adj_YOY) AS nominal_adjusted_rate_difference_yoy
 
 FROM yoy
 )
 
-SELECT * FROM final ORDER BY yoy_diff desc
+SELECT * FROM final ORDER BY nominal_adjusted_rate_difference_yoy desc
