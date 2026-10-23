@@ -6,7 +6,7 @@ type_of_household,
 year,
 income.income as yng_prsn_inc,
 number_of_households as yng_prsn_hh_cnt
-FROM `dbt_ssb.dim_hh_type`
+FROM {{ ref('dim_hh_type') }}
 WHERE income.income_type LIKE '%After-tax income, median in constant prices (NOK)%'
 AND type_of_household LIKE '%Living alone, person 30-44 years%'),
 
@@ -15,7 +15,7 @@ type_of_household,
 year,
 income.income as old_prsn_inc,
 number_of_households as old_prsn_hh_cnt
-FROM `dbt_ssb.dim_hh_type`
+FROM {{ ref('dim_hh_type') }}
 WHERE income.income_type LIKE '%After-tax income, median in constant prices (NOK)%'
 AND type_of_household LIKE '%Living alone, person 67 years and over%'),
 
