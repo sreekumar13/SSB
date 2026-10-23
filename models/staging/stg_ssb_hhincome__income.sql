@@ -11,7 +11,7 @@ WITH all_key AS
         year,
         value
 
-        FROM {{ source('ssb_pipeline', 'ssb_household_income_raw') }} as raw
+        FROM {{ ref('stg_ssb_household_raw_edited') }} as raw
 
         LEFT JOIN {{ ref('stg_ssb_hhincome__hh_type') }} as hht 
         USING (type_of_household)

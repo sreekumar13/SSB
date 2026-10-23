@@ -7,7 +7,7 @@ WITH all_hh AS
         value,
         hh_key
 
-    FROM {{ source('ssb_pipeline', 'ssb_household_income_raw') }} as raw
+    FROM {{ ref('stg_ssb_household_raw_edited') }} as raw
 
     LEFT JOIN {{ ref('stg_ssb_hhincome__all_type') }} AS allt
     ON allt.observed_metric = raw.contents

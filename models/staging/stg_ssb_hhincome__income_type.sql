@@ -1,6 +1,6 @@
 WITH income_type AS (
                 SELECT ROW_NUMBER() OVER () AS key,contents
-                FROM {{ source('ssb_pipeline', 'ssb_household_income_raw') }}
+                FROM {{ ref('stg_ssb_household_raw_edited') }}
                 GROUP BY contents)
 
 SELECT

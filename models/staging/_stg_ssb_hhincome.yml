@@ -1,4 +1,7 @@
 models:
+  - name: stg_ssb_household_raw_edited
+    description: Copy of the raw table from source edited to correct a cosmetic spelling mistake in a household type.
+    
   - name: stg_ssb_hhincome__all_type
     description: Table listing the individual types of observed metrics (incl. income types & counts) for which SSB data is available.
 
