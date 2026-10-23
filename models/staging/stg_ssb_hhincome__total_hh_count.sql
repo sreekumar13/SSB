@@ -9,9 +9,9 @@ WITH all_hh AS
 
     FROM {{ source('ssb_pipeline', 'ssb_household_income_raw') }} as raw
 
-    LEFT JOIN `dbt_ssb.stg_ssb_hhincome__all_type` AS allt
+    LEFT JOIN {{ ref('stg_ssb_hhincome__all_type') }} AS allt
     ON allt.observed_metric = raw.contents
-    LEFT JOIN `dbt_ssb.stg_ssb_hhincome__hh_type` as hht 
+    LEFT JOIN {{ ref('stg_ssb_hhincome__hh_type') }} as hht 
     USING (type_of_household)
 
 
